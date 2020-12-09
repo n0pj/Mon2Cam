@@ -4,9 +4,9 @@ import type Options from "../libraries/options.ts";
 import { readStdin } from "../libraries/utility.ts";
 
 /*
-/  VS_APP Is responsible for combining the sound of the applications. 
+/  VS_APP Is responsible for combining the sound of the applications.
 /  Both the host and the client will hear this.
-/  VS_MIC Is responsible for combining the devices that only the client will hear. 
+/  VS_MIC Is responsible for combining the devices that only the client will hear.
 /  (Mainly microphones)
 */
 const VS_APP = "VirtualSinkAPP";
@@ -80,7 +80,7 @@ export default async function (options: Options, logger: Logger) {
 			} else {
 				logger.panic(`An error occured while trying to list the sinks`, cmd.status.code);
 			}
-			resolve(undefined);
+			// resolve(undefined);
 		});
 	}
 
