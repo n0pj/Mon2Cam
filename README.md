@@ -11,6 +11,7 @@ src/backends/audio.ts:83:12 の resolve(undefined); をコメントアウト。
 
 その後、
 ```
+// install.sh の以下の部分を編集する
 // INSERT='alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"'
 // ローカルで実行するように変更する
 // したら sh install.sh で実行
