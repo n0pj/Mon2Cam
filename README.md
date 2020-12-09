@@ -1,4 +1,22 @@
-# Mon2Cam
+# Mon2Cam Fix
+
+こんなエラーが出てきて、使えなかった。
+```
+error: TS2345 [ERROR]: Argument of type 'undefined' is not assignable to parameter of type 'Sink[] | PromiseLike<Sink[]>'.
+			resolve(undefined);
+			        ~~~~~~~~~
+    at https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/backends/audio.ts:83:12
+```
+src/backends/audio.ts:83:12 の resolve(undefined); をコメントアウト。
+
+その後、
+```
+// INSERT='alias mon2cam="deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts"'
+// ローカルで実行するように変更する
+// したら sh install.sh で実行
+INSERT='alias mon2cam="deno run --unstable -A -r -q /home/n0pj/Dev/Mon2Cam/src/mod.ts"'
+```
+
 
 Fix for multi-monitor Discord screensharing
 
@@ -15,6 +33,11 @@ Ubuntu 18.04 and below does not provide v4l2loopback 0.12, if you use older vers
 ## Instructions:
 
 - Install [Deno]
+```
+// これが入ってないとエラーになるので入れる
+sudo apt install v4l2loopback-dkms
+sudo apt install ffmpeg
+```
 - Run `curl -s https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/install.sh | sh`
 - Open a new terminal and type `mon2cam`
 - Switch discord webcam
