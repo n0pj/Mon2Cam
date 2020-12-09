@@ -1,6 +1,6 @@
 # Mon2Cam Fix
 
-こんなエラーが出てきて、使えなかった。
+こんなエラーが出てきて、使えなかった。MX Linux で使用。
 ```
 error: TS2345 [ERROR]: Argument of type 'undefined' is not assignable to parameter of type 'Sink[] | PromiseLike<Sink[]>'.
 			resolve(undefined);
